@@ -29,9 +29,17 @@ USER GUIDE
 LISTPROC Commands
 
 LISTPROC /CREATE discussion
+
 LISTPROC /SEARCH keywords keywords keywords returns list of discussion with they keywords
+
 LISTPROC /RECEIVE discussion1 discussion2 discussion3 returns 3 file sends with those full discussions
+
 LISTPROC /SUBSCRIBE   discussion
+
 LISTPROC /UNSUBSCRIBE discussion
+
 LISTPROC /LIST     sends a list of all discussions by file send
+
+
+
 
