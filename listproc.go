@@ -3,7 +3,7 @@ package main
 /*
    listproc v0.0.1  Dec 19 2019
    a list server for HNET and web
-    
+
    listproc &
    (c) 2019 by moshix
    Program source is under Apache license             */
@@ -19,44 +19,43 @@ import (
 	"time"
 )
 
-var version string = "v0.0.1"  // version of this program 
+var version string = "v0.0.1" // version of this program
 
-vary discussionsdir string = "/usr/spool/listproc"      // where discussion files are kept
+var discussionsdir string = "/usr/spool/listproc" // where discussion files are kept
 
-var discussions_count int64         // total discussions managed, used /STATS command
-var messages__received_count int64  // total notes received, used by /STATS command
-var messages__sent_count int64      // total notes received, used by /STATS command
+var discussions_count int64        // total discussions managed, used /STATS command
+var messages__received_count int64 // total notes received, used by /STATS command
+var messages__sent_count int64     // total notes received, used by /STATS command
 
 type discussions struct {
-	subscribers  string //user@node
-	lastmessage  int64  //when was the last message received for this discussion
-	file         string //name of file holding this discussion in directory
-	msgs         int64  //how many messages in this discussion
+	subscribers string //user@node
+	lastmessage int64  //when was the last message received for this discussion
+	file        string //name of file holding this discussion in directory
+	msgs        int64  //how many messages in this discussion
 }
 
 var discussiontable map[string]discussions // map of structs of all logged on users
 
 func main() {
 	discussions = make(map[string]discussions)
-     
+
 	fmt.Println("HNET LISTPROC server started....")
-    // Open file with backup of all discussion files (backup of map discussions)
-	
+	// Open file with backup of all discussion files (backup of map discussions)
 
 	// wait for commands to enter
-	while {
-	    when file with command came in catch it here somehow
-		extract the first line 
-		if not a listproc command line then ignore it!! 
-		else 
-	       readcommand(commandline)   //process the command after extracting it
-		time.Sleep(400 * time.Millisecond) // wait a bit to avoid excessive CPU usage
+	while{
+		//when file with command came in catch it here somehow
+		//	extract the first line
+		//	if not a listproc command line then ignore it!!
+		//	else
+		//readcommand(commandline)   //process the command after extracting it
+		//time.Sleep(400 * time.Millisecond) // wait a bit to avoid excessive CPU usage
 	}
 }
 
 func openfile(discussion_file string) {
 
-	file, err := os.OpenFile(discussionfile, os.O_CREATE, os.ModeNamedPipe) // how to open a normal text file ???XXXXXXXXXXX 
+	file, err := os.OpenFile(discussionfile, os.O_CREATE, os.ModeNamedPipe) // how to open a normal text file ???XXXXXXXXXXX
 	if err != nil {
 		log.Fatal("Open discussion file error:", err)
 	} else {
@@ -64,8 +63,6 @@ func openfile(discussion_file string) {
 	}
 
 }
-
-
 
 func readcommand(commandline string) {
 
@@ -87,10 +84,10 @@ func readcommand(commandline string) {
 	//---------------------------------------------------------------------------------
 	//   /HELP sends to the user a help menu with ossibilities
 	//   /SEARCH
-	//   /SUBSCRIBE 
-	//   /UNBUSBSCRIBE 
-	//   /LIST  
-    //   /stats     	sends usage statistics
+	//   /SUBSCRIBE
+	//   /UNBUSBSCRIBE
+	//   /LIST
+	//   /stats     	sends usage statistics
 	//---------------------------------------------------------------------------------
 
 	switch upperfifomsg {
