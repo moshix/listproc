@@ -1,7 +1,10 @@
 This is a bitnet, or better an HNET list processor for mailinglists
 -------------------------------------------------------------------
 
-Dec 2019 by moshix
+
+(c) Dec 2019 by moshix
+
+
 Apache license
 
 
@@ -20,7 +23,8 @@ RUN
 After building it run it with ./listproc
 
 
-User guide:
+USER GUIDE
+----------
 
 LISTPROC Commands
 
