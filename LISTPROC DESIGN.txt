@@ -1,0 +1,41 @@
+LISTPROC DESIGN
+Moshix, Dec 19, 2019
+
+Purpose: HNET-based forum with access from outside internet as well
+
+Example:
+
+MAINT@MOSHIX2 creates a new subject “PERFORMANCE of RELAY” by sending a file to RELAY with this format:
+LISTPROC /CREATE PERFORMANCE RELAY
+And then writes  a variable length mailing
+
+He sends it to relay with a client program or by sendfile. 
+
+RELAY stores it in an append-only LIST of files on this purpose and makes it searchable. 
+
+User CCRAFT@NOODLE does a 
+LISTPROC /SUBSCRIBE PERFORMANCE RELAY
+
+And then gets copies of all discussions on this topic. To unsubscribe he send a file
+LISTPROC /UNSUBSCRIBE PERFORMANCE RELAY
+
+The client can also do a search with 
+LISTPROC /SEARCH KEYWORDS KEYWORDS KEYWORDS
+
+A list of discussions containing these keywords is returned. He can then
+
+Do LISTPROC /RECEIVE the discussions he wants (up to 3 at a time) and RELAY will send a file with those discussions to the user. 
+
+LISTPROC commands
+LISTPROC /CREATE discussion
+LISTPROC /SEARCH keywords keywords keywords returns list of discussion with they keywords
+LISTPROC /RECEIVE discussion1 discussion2 discussion3 returns 3 file sends with those full discussions
+LISTPROC /SUBSCRIBE   discussion
+LISTPROC /UNSUBSCRIBE discussion
+LISTPROC /LIST     sends a list of all discussions by file send
+
+
+
+
+
+
